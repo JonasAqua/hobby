@@ -1,14 +1,12 @@
-function diceRoller(optionsString) {
-  var options = getDiceOptions(optionsString)
-  var numberOfDice = options[0]
-  var numberOfSides = options[1]
-  var result = rollAllDice(numberOfDice, numberOfSides)
-  return result
-}
+// Todo for tomorrow: Learn Typechecking with TypeScript and Flow
 
-function getDiceOptions(optionsString) {
-  return [2, 6]
-}
+// TODO: Error handling
+const numberOfDice = parseInt(process.argv[2])
+const numberOfSides = parseInt(process.argv[3])
+
+const output = rollAllDice(numberOfDice, numberOfSides)
+console.log(output)
+
 
 function rollAllDice(numberOfDice, numberOfSides) {
   var output = 0
