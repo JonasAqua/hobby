@@ -1,6 +1,17 @@
 "use strict";
 exports.__esModule = true;
-// TODO: Error handling
+// Errors
+var invalidArgumentLengthError = new Error('Invalid Argument Length, it should be 2!');
+var invalidArgumentTypeError = new Error('Invalid Argument Type or Types, both needs to be numbers!');
+// Error Handling
+if (process.argv.length != 4) {
+    console.error(invalidArgumentLengthError);
+    process.exit(1);
+}
+if (typeof process.argv[2] !== 'number' || typeof process.argv[3] !== 'number') {
+    console.error(invalidArgumentTypeError);
+    process.exit(2);
+}
 var numberOfDice = parseInt(process.argv[2]);
 var numberOfSides = parseInt(process.argv[3]);
 var output = rollAllDice(numberOfDice, numberOfSides);
